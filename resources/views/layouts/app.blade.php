@@ -85,7 +85,7 @@
                                 </a>
                             </li>
                             <li id="li-form" class="background-color-minor">
-                                <a id="a-form" href="{{asset('/import')}}" onclick="btnClick('import')">
+                                <a id="a-form" href="{{asset('/form')}}" onclick="btnClick('form')">
                                     <b>ฟอร์มวัคซีน <i class="mdi mdi-file-excel" aria-hidden="true"></i></b>
                                 </a>
                             </li>
