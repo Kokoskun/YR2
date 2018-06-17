@@ -1,95 +1,131 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+@extends('layouts.app')
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 panel panel-default panel-body" style="margin-top:-1.9rem;">
+            <table cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+                <tr>
+                    <td style="padding:10px;">
+                        <div id="map" align="center">
+                            <img id="imageFloor" src="{{asset('image/floor/H1lTWEAnst6678605703f2cd0198abde4d07714fa6.jpg')}}" style="width:100%;height:auto;" />
+                        </div>          
+                    </td>
+                </tr>
+            </table>
+                <div class="col-md-12 mt-4">
+                    <div class="col-md-2">
+                        <h5 class="text-box"><b>Floor:</b></h5>
+                    </div>
+                    <div class="col-md-1">
+                        <h5 class="text-box"><b>Status:</b></h5>
+                    </div>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="col-md-12 mt-2">
+                    <div class="col-md-2">
+                        <h5 class="text-box"><b>Title:</b></h5>
+                    </div>
+                    <div class="col-md-9">
+                        <input id="create-title-defect" name="createTitleDefect" type="text" class="form-control">
+                    </div>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col-md-12 mt-2">
+                    <div class="col-md-2">
+                        <h5 class="text-box"><b>Detail:</b></h5>
+                    </div>
+                    <div class="col-md-9">
+                        <textarea id="create-detail-defect" name="createDetailDefect" class="form-control"></textarea>
+                    </div>
                 </div>
-            </div>
+                <div class="col-md-12 mt-2">
+                    <div class="col-md-2">
+                        <h5 class="text-box"><b>People Involved:</b></h5></div>
+                    <div class="col-md-1">
+                        <h5 class="text-box"><b>Deadline:</b></h5>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" id="create-deadline-defect" name="createDeadlineDefect" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-12 mt-3">
+                    <div class="col-md-3">
+                        <h5 class="text-box"><b>Image Defect1:</b></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" class="form-control mt-1" name="fileUploadDefect1" id="fileUploadDefect1">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <h5 class="text-box"><b>Image Defect2:</b></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" class="form-control mt-1" name="fileUploadDefect2" id="fileUploadDefect2">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <h5 class="text-box"><b>Image Defect3:</b></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" class="form-control mt-1" name="fileUploadDefect3" id="fileUploadDefect3">
+                    </div>
+                </div>                
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <h5 class="text-box"><b>Image Defect4:</b></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" class="form-control mt-1" name="fileUploadDefect4" id="fileUploadDefect4">
+                    </div>
+                </div>                
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <h5 class="text-box"><b>Image Defect5:</b></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" class="form-control mt-1" name="fileUploadDefect5" id="fileUploadDefect5">
+                    </div>
+                </div>
+                <ul class="col-md-12 text-center" style="float:left;display:inline;list-style-type:none;">
+                    <li id="create-list-defect1" class="text-center" style="display:inline;"></li>
+                    <li id="create-list-defect2" class="text-center" style="display:inline;"></li>
+                    <li id="create-list-defect3" class="text-center" style="display:inline;"></li>
+                    <li id="create-list-defect4" class="text-center" style="display:inline;"></li>
+                    <li id="create-list-defect5" class="text-center" style="display:inline;"></li>
+                </ul>
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
         </div>
-    </body>
-</html>
+    </div>
+</div> 
+@stop
+@section('myJS')
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="{{asset('js/jquery-ui.min.js')}}"></script>
+		<script type="text/javascript" src="https://unpkg.com/jquery-mousewheel@3.1.13"></script>
+		<script type="text/javascript" src="{{asset('js/hammer.min.js')}}"></script>
+		<script type="text/javascript" src="{{asset('js/jquery-hammerjs.js')}}"></script>
+		<script type="text/javascript" src="{{asset('js/imgViewer.js')}}"></script>
+		<link rel="stylesheet" type="text/css" href="{{asset('css/imgNotes.css')}}">
+		<script type="text/javascript" src="{{asset('js/imgNotes.js')}}"></script>
+		<script type="text/javascript">
+			var imageA=null;
+            var imgFloor=$("#imageFloor").imgNotes({
+                onEdit: function(ev,elem){
+                    var elemFloor = $(elem);
+                    var notes = imgFloor.imgNotes('export');
+                    if(imageA!=null){
+                    	imageA.trigger("remove");
+                    }else{
+                    	imageA=elemFloor;
+                    }
+                    console.log(imageA);
+                }
+            });
+            imgFloor.imgNotes("option","canEdit",true);
+
+
+					
+//$img.imgNotes('clear');
+		</script>
+@endsection
