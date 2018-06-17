@@ -11,15 +11,15 @@
         <div class="panel panel-default panel-body" style="margin-top:-1.25em;">
             <div class="col-md-12" style="margin-top:-1em;">
                 <div class="col-md-2 mt-3">
-                    <a href="{{ asset('/manage-group')}}" style="text-decoration:none;"><button class="form-control">Back <i class="mdi mdi-step-backward" aria-hidden="true"></i></button></a>
+                    <a href="{{ asset('/manage-group')}}" style="text-decoration:none;"><button class="form-control">ย้อนกลับ <i class="mdi mdi-step-backward" aria-hidden="true"></i></button></a>
                 </div>
                 <div class="col-md-8 text-center align-middle">
-                    <h3 class="text-center"><b>Manage Person</b></h3>
+                    <h3 class="text-center"><b>จัดการผู้ใช้ที่เกี่ยวข้อง</b></h3>
                     <h4 class="text-center"><b>{{$dataGroup->name}}</b></h4>
                     @if(isset($dataGroup->remark))
-                    <h5 class="text-center"><b>Remark:</b> <i>{{$dataGroup->remark}}</i></h5>
+                    <h5 class="text-center"><b>รายละเอียด:</b> <i>{{$dataGroup->remark}}</i></h5>
                     @endif
-                    <h6 class="text-center"><i>(Count of person: <span id="count-tablet">{{$countUser}}</span>)</i></h6>
+                    <h6 class="text-center"><i>(จำนวนคนทั้งหมดที่เกี่ยวข้อง: <span id="count-tablet">{{$countUser}}</span>)</i></h6>
                 </div>
             </div>
             <form id="addUsersForm" enctype="multipart/form-data" action="{{asset('/manage-group/'.$id.'/manage-person/confirm/')}}" method="post">
@@ -34,7 +34,7 @@
                         </select>
                     </div>
                     <div class="col-md-2 mt-1">
-                        <button type="submit" class="text-center btn btn-create-view form-control">Add <i class="mdi mdi-account-multiple-plus" aria-hidden="true"></i></button>
+                        <button type="submit" class="text-center btn btn-create-view form-control">เพิ่ม <i class="mdi mdi-account-multiple-plus" aria-hidden="true"></i></button>
                     </div>
                 </div>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -46,23 +46,23 @@
                 <thead>
                     <tr class="width-100">
                         <th class="text-center align-middle width-10">
-                            <span class="is-hidden-mobile"><b>Permission</b></span>
-                            <span class="is-hidden-tablet" style="font-size:0.5em;"><b>Permission</b></span>
+                            <span class="is-hidden-mobile"><b>สถานะ</b></span>
+                            <span class="is-hidden-tablet" style="font-size:0.5em;"><b>สถานะ</b></span>
                         </th>
                         <th class="is-hidden-tablet text-center align-middle width-20">
-                            <span style="font-size:0.5em;"><b>Full Name</b></span>
+                            <span style="font-size:0.5em;"><b>ชื่อ-นามสกุล</b></span>
                         </th>
-                        <th class="is-hidden-mobile text-center align-middle width-15">First Name</th>
-                        <th class="is-hidden-mobile text-center align-middle width-15">Last Name</th>
-                        <th class="is-hidden-mobile text-center align-middle width-20">Email</th>
+                        <th class="is-hidden-mobile text-center align-middle width-15">ชื่อจริง</th>
+                        <th class="is-hidden-mobile text-center align-middle width-15">นามสกุล</th>
+                        <th class="is-hidden-mobile text-center align-middle width-20">อีเมล์</th>
                         <th class="text-center align-middle width-10">
-                            <span class="is-hidden-mobile"><b>Auth</b></span>
-                            <span class="is-hidden-tablet" style="font-size:0.5em;"><b>Auth</b></span>
+                            <span class="is-hidden-mobile"><b>การเข้าระบบ</b></span>
+                            <span class="is-hidden-tablet" style="font-size:0.5em;"><b>การเข้าระบบ</b></span>
                         </th>
-                        <th class="is-hidden-mobile text-center width-5">Image</th>
+                        <th class="is-hidden-mobile text-center width-5">รูปภาพ</th>
                         <th class="text-center align-middle width-10">
-                            <span class="is-hidden-mobile"><b>Dismiss</b></span>
-                            <span class="is-hidden-tablet" style="font-size:0.5em;"><b>Dismiss</b></span>
+                            <span class="is-hidden-mobile"><b>จัดการ</b></span>
+                            <span class="is-hidden-tablet" style="font-size:0.5em;"><b>จัดการ</b></span>
                         </th>
                     </tr>
                 </thead>
@@ -131,9 +131,9 @@
     var valueCountUser={{$countUser}};
     function dismissUser(user_id,permission_name,email,first_name,last_name){
         swal({
-        title: 'Dismiss Person',
+        title: 'ลับผู้ที่เกี่ยวข้อง',
         type: 'warning',
-        html: '<b>Permission:</b> '+permission_name+'<br><b>Name:</b> '+first_name+' '+last_name+'<br><b>Email:</b> '+email,
+        html: '<b>สถานะ:</b> '+permission_name+'<br><b>ชื่อ:</b> '+first_name+' '+last_name+'<br><b>อีเมล์:</b> '+email,
         showCloseButton: true,
         showCancelButton: true,
         confirmButtonColor: '#c94a3b',
@@ -152,7 +152,7 @@
                 success:function(data){
                     if(data.valueID==null){
                         swal({
-                            title:'Dismiss Person!',
+                            title:'ลับผู้ที่เกี่ยวข้อง!',
                             type:'error',
                             html:'Can Not Dismiss Person in Server!!<br>Please refresh to page <i class="mdi mdi-refresh" aria-hidden="true"></i>',
                             showCloseButton: true,
@@ -164,9 +164,9 @@
                         $('#count-tablet').text(valueCountUser);
                         $('#tr-'+data.valueID).addClass("is-hidden-data");
                         swal({
-                            title:'Dismiss Person!',
+                            title:'ลับผู้ที่เกี่ยวข้องเรียบร้อย!',
                             type:'success',
-                            html:'Dismiss Person in Group Success',
+                            html:'ลับผู้ที่เกี่ยวข้องในกลุ่มเรียบร้อย',
                             showCloseButton: true,
                             confirmButtonColor: '#bcb8b9',
                             confirmButtonText: 'Close'

@@ -73,6 +73,7 @@
                             <!--<li><a href="{{route('register')}}"><b>Register <i class="mdi mdi-account-plus" aria-hidden="true"></i></b></a></li>-->
                         @else
                             @if(Auth::user()->permission_id==80)
+     
                             <li id="li-manage-group" class="background-color-minor">
                                 <a id="a-manage-group" href="{{asset('/manage-group')}}" onclick="btnClick('manage-group')">
                                     <b>จัดการโครงการ <i class="mdi mdi-lan" aria-hidden="true"></i></b>
@@ -83,48 +84,10 @@
                                     <b>จัดการผู้ใช้งาน <i class="mdi mdi-account-network" aria-hidden="true"></i></b>
                                 </a>
                             </li>
-                            @elseif(Auth::user()->permission_id==30)
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <b>Manage Defect<i class="mdi mdi-chevron-down" aria-hidden="true"></i></b>
+                            <li id="li-import" class="background-color-minor">
+                                <a id="a-import" href="{{asset('/import')}}" onclick="btnClick('import')">
+                                    <b>นำเข้าข้อมูลExcell <i class="mdi mdi-file-excel" aria-hidden="true"></i></b>
                                 </a>
-                                <ul class="dropdown-menu text-center" role="menu">
-                                    <li id="li-manage-defect">
-                                        <a id="a-manage-defect" href="{{asset('/manage-defect')}}" onclick="btnClick('manage-defect')" class="text-center">
-                                            Manage Defect All<i class="mdi mdi-book" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <?php
-
-                                        for($item=0;$item<count($listGroups);$item++){
-                                            if(isset($dataCheckVPG[$listGroups[$item]->id])){
-                                                $idGroup=$listGroups[$item]->id;
-                                                echo '<li id="li-manage-defect-'.$idGroup.'" class="text-center"><a id="a-manage-defect-'.$idGroup.'" href="'.asset('/manage-defect/group/'.$idGroup).'" onclick="btnClick('."'".'manage-defect-'.$idGroup."'".')">'.$listGroups[$item]->name.' <i class="mdi mdi-cube-unfolded" aria-hidden="true"></i></a></li>';
-                                            }
-                                        }
-                                    ?>
-                                </ul>
-                            </li>
-                            @elseif(Auth::user()->permission_id==21||Auth::user()->permission_id==22||Auth::user()->permission_id==23)
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <b>View Defect<i class="mdi mdi-chevron-down" aria-hidden="true"></i></b>
-                                </a>
-                                <ul class="dropdown-menu text-center" role="menu">
-                                    <li id="li-view-defect">
-                                        <a id="a-view-defect" href="{{asset('/view-defect')}}" onclick="btnClick('view-defect')" class="text-center">
-                                            View Defect All<i class="mdi mdi-book" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <?php
-                                        for($item=0;$item<count($listGroups);$item++){
-                                            if(isset($dataCheckVPG[$listGroups[$item]->id])){
-                                                $idGroup=$listGroups[$item]->id;
-                                                echo '<li id="li-view-defect-'.$idGroup.'" class="text-center"><a id="a-view-defect-'.$idGroup.'" href="'.asset('/view-defect/group/'.$idGroup).'" onclick="btnClick('."'".'view-defect-'.$idGroup."'".')">'.$listGroups[$item]->name.' <i class="mdi mdi-cube-unfolded" aria-hidden="true"></i></a></li>';
-                                            }
-                                        }
-                                    ?>
-                                </ul>
                             </li>
                             @endif
                             <li class="dropdown">

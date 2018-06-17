@@ -11,12 +11,12 @@
             <div class="panel panel-default panel-body">
                 <div class="col-md-12" style="margin-top:-1em;">
                     <div class="col-md-offset-3 col-md-6">
-                        <h3 class="text-center"><b>Manage Groups <i class="mdi mdi-lan" aria-hidden="true"></i></b></h3>
-                        <h6 class="text-center"><i>(Count of group: <span id="count-tablet">{{$countGroup}}</span>)</i></h6>
+                        <h3 class="text-center"><b>จัดการโครงการ <i class="mdi mdi-lan" aria-hidden="true"></i></b></h3>
+                        <h6 class="text-center"><i>(จำนวนโครงการ: <span id="count-tablet">{{$countGroup}}</span>)</i></h6>
                     </div>
                     <div class="text-center col-md-3 mt-5">
-                        <button class="is-hidden-mobile btn btn-create-view align-middle text-center form-control" onclick="addGroup()">Add Group <i class="mdi mdi-plus" aria-hidden="true"></i></button>
-                        <button class="is-hidden-tablet btn-min btn-create-view align-middle text-center" onclick="addGroup()">Add Group <i class="mdi mdi-plus" aria-hidden="true"></i></button>
+                        <button class="is-hidden-mobile btn btn-create-view align-middle text-center form-control" onclick="addGroup()">เพิ่มโครงการ <i class="mdi mdi-plus" aria-hidden="true"></i></button>
+                        <button class="is-hidden-tablet btn-min btn-create-view align-middle text-center" onclick="addGroup()">เพิ่มโครงการ <i class="mdi mdi-plus" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>
@@ -29,24 +29,24 @@
                                     Project Manager
                                 </th>
                                 <th class="text-center align-middle width-5">
-                                    <span class="is-hidden-mobile">Count User</span>
+                                    <span class="is-hidden-mobile">จำนวนผู้ใช้</span>
                                     <span class="is-hidden-tablet" style="font-size:0.5em;">Count User</span>
                                 </th>
                                 <th class="text-center align-middle">
-                                    <span class="is-hidden-mobile">Name Group</span>
+                                    <span class="is-hidden-mobile">ชื่อโครงการ</span>
                                     <span class="is-hidden-tablet" style="font-size:0.5em;">Group</span>
                                 </th>
                                 <th class="text-center align-middle width-5">
-                                    <span class="is-hidden-mobile">Info</span>
+                                    <span class="is-hidden-mobile">รายละเอียด</span>
                                     <span class="is-hidden-tablet" style="font-size:0.5em;">Info</span>
                                 </th>
                                 <th class="text-center align-middle width-10">
-                                    <span class="is-hidden-mobile">Manage Person/Floor</span>
-                                    <span class="is-hidden-tablet" style="font-size:0.5em;">Manage Person/Floor</span>
+                                    <span class="is-hidden-mobile">จัดการคนที่เกี่ยวข้อง</span>
+                                    <span class="is-hidden-tablet" style="font-size:0.5em;">จัดการคนที่เกี่ยวข้อง</span>
                                 </th>
                                 <th class="text-center align-middle width-5">
-                                    <span class="is-hidden-mobile">Setting Group</span>
-                                    <span class="is-hidden-tablet" style="font-size:0.5em;">Setting Group</span>
+                                    <span class="is-hidden-mobile">กำหนด</span>
+                                    <span class="is-hidden-tablet" style="font-size:0.5em;">กำหนด</span>
                                 </th>
                             </tr>
                         </thead>
@@ -119,15 +119,15 @@
                                     </td>
                                     <td class="text-center align-middle width-10">
                                         <div class="is-hidden-mobile dropdown">
-                                            <button class="btn btn-manage form-control" data-toggle="dropdown">Manage<i aria-hidden="true" class="mdi mdi-chevron-down"></i></button>
+                                            <button class="btn btn-manage form-control" data-toggle="dropdown">จัดการ<i aria-hidden="true" class="mdi mdi-chevron-down"></i></button>
                                             <ul class="dropdown-menu">
-                                                <li class="text-center"><a href="{{ asset('/manage-group/'.$groupID.'/manage-person/')}}">Manage Person <i class="mdi mdi-account-multiple" aria-hidden="true"></i></a></li>
+                                                <li class="text-center"><a href="{{ asset('/manage-group/'.$groupID.'/manage-person/')}}">จัดการผู้ใช้ <i class="mdi mdi-account-multiple" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </div>
                                         <div class="is-hidden-tablet dropdown">
-                                            <button class="btn-min btn-manage width-100" data-toggle="dropdown">Manage<i aria-hidden="true" class="mdi mdi-chevron-down"></i></button>
+                                            <button class="btn-min btn-manage width-100" data-toggle="dropdown">จัดการ<i aria-hidden="true" class="mdi mdi-chevron-down"></i></button>
                                             <ul class="dropdown-menu">
-                                                <li class="text-center"><a href="{{ asset('/manage-group/'.$groupID.'/manage-person/')}}">Manage Person <i class="mdi mdi-account-multiple" aria-hidden="true"></i></a></li>
+                                                <li class="text-center"><a href="{{ asset('/manage-group/'.$groupID.'/manage-person/')}}">จัดการผู้ใช้ <i class="mdi mdi-account-multiple" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -135,15 +135,15 @@
                                         <div class="is-hidden-mobile dropdown">
                                             <button class="btn btn-setting form-control" data-toggle="dropdown"><i aria-hidden="true" class="mdi mdi-settings"></i> <i aria-hidden="true" class="mdi mdi-chevron-down"></i></button>
                                             <ul class="dropdown-menu">
-                                                <li class="text-center"><a onclick="editGroup({{$groupID}})" href="javascript:void(0)">Edit Group <i class="mdi mdi-table-edit" aria-hidden="true"></i></a></li>
-                                                <li class="text-center"><a onclick="deleteGroup({{$groupID}})" href="javascript:void(0)">Delete Group <i class="mdi mdi-delete-empty" aria-hidden="true"></i></a></li>
+                                                <li class="text-center"><a onclick="editGroup({{$groupID}})" href="javascript:void(0)">แก้ไขโครงการ <i class="mdi mdi-table-edit" aria-hidden="true"></i></a></li>
+                                                <li class="text-center"><a onclick="deleteGroup({{$groupID}})" href="javascript:void(0)">ลบโครงการ <i class="mdi mdi-delete-empty" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </div>
                                         <div class="is-hidden-tablet dropdown">
                                             <button class="btn-min btn-setting width-100" data-toggle="dropdown"><i aria-hidden="true" class="mdi mdi-settings"></i> <i aria-hidden="true" class="mdi mdi-chevron-down"></i></button>
                                             <ul class="dropdown-menu">
-                                                <li class="text-center"><a onclick="editGroup({{$groupID}})" href="javascript:void(0)">Edit Group <i class="mdi mdi-table-edit" aria-hidden="true"></i></a></li>
-                                                <li class="text-center"><a onclick="deleteGroup({{$groupID}})" href="javascript:void(0)">Delete Group <i class="mdi mdi-delete-empty" aria-hidden="true"></i></a></li>
+                                                <li class="text-center"><a onclick="editGroup({{$groupID}})" href="javascript:void(0)">แก้ไขโครงการ <i class="mdi mdi-table-edit" aria-hidden="true"></i></a></li>
+                                                <li class="text-center"><a onclick="deleteGroup({{$groupID}})" href="javascript:void(0)">ลบโครงการ <i class="mdi mdi-delete-empty" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -255,7 +255,7 @@
         var textPerson='';
         var countUser=0;
         if(this.getGroup(idGroup,2)){
-            textRemark='<h5><b>Remark:</b> '+this.getGroup(idGroup,2)+'</h5>';
+            textRemark='<h5><b>รายละเอียด:</b> '+this.getGroup(idGroup,2)+'</h5>';
         }
         for(var item=0;item<this.dataVPG.length;item++){
             if(this.dataVPG[item][1]==idGroup){
@@ -282,7 +282,7 @@
         }
         swal({
             title:this.getGroup(idGroup,1),
-            html:textRemark+"<b>User In Group</b> <i class='h6'>(Count User:"+countUser+")</i><table class='table table-hover'><tbody>"+textPerson+"</tbody></table>",
+            html:textRemark+"<b>ผู้ใช้ที่อยู่ในโครงการ</b> <i class='h6'>(Count User:"+countUser+")</i><table class='table table-hover'><tbody>"+textPerson+"</tbody></table>",
             showCloseButton: true,
             confirmButtonColor: '#bcb8b9',
             confirmButtonText: 'Close'
@@ -294,13 +294,13 @@
         var remarkGroup=this.getGroup(idGroup,2);
         this.countGroup =  parseInt(countGroup)+1;
         $('#count-tablet').text(this.countGroup);
-        var htmlTR='<tr id="tr-'+idGroup+'" class="width-100"><td class="is-hidden-mobile text-center align-middle width-20"><span id="count-user-mobile-'+idGroup+'" style="font-size:0.5em;">-</span></td><td class="text-center align-middle width-5"><span id="count-user-tablet-'+idGroup+'" class="is-hidden-mobile">0</span><span id="count-user-mobile-'+idGroup+'" class="is-hidden-tablet" style="font-size:0.5em;">0</span></td><td class="text-center align-middle"><span id="name-group-tablet-'+idGroup+'" class="is-hidden-mobile">'+nameGroup+'</span><span id="name-group-mobile-'+idGroup+'" class="is-hidden-tablet" style="font-size:0.5em;">'+nameGroup+'</span></td><td class="text-center align-middle width-5"><a onclick="infoGroup('+idGroup+')" href="javascript:void(0)"><button class="is-hidden-tablet text-center btn-min btn-info-mobile"><i class="mdi mdi-information-outline" aria-hidden="true"></i></button><button class="is-hidden-mobile btn btn-info form-control"><i class="mdi mdi-information-outline" aria-hidden="true"></i></button></a></td><td class="text-center align-middle width-10"><div class="is-hidden-mobile dropdown"><button class="btn btn-manage form-control" data-toggle="dropdown">Manage<i aria-hidden="true" class="mdi mdi-chevron-down"></i></button><ul class="dropdown-menu"><li class="text-center"><a href="{{ asset("/manage-group/")}}'+'/'+idGroup+'/manage-person">Manage Person <i class="mdi mdi-account-multiple" aria-hidden="true"></i></a></li><li class="text-center"><a href="{{ asset("/manage-group/")}}'+'/'+idGroup+'/manage-floor">Manage Floor <i class="mdi mdi-map" aria-hidden="true"></i></a></li><li class="text-center"><a href="{{ asset("/manage-group/")}}'+'/'+idGroup+'/manage-status-defect">Manage Status Defect <i class="mdi mdi-map-marker-circle" aria-hidden="true"></i></a></li></ul></div><div class="is-hidden-tablet dropdown"><button class="btn-min btn-manage width-100" data-toggle="dropdown">Manage<i aria-hidden="true" class="mdi mdi-chevron-down"></i></button><ul class="dropdown-menu"><li class="text-center"><a href="{{ asset("/manage-group/")}}'+'/'+idGroup+'/manage-person">Manage Person <i class="mdi mdi-account-multiple" aria-hidden="true"></i></a></li><li class="text-center"><a href="{{ asset("/manage-group/")}}'+'/'+idGroup+'/manage-floor">Manage Floor <i class="mdi mdi-map" aria-hidden="true"></i></a></li><li class="text-center"><a href="{{ asset("/manage-group/")}}'+'/'+idGroup+'/manage-status-defect">Manage Status Defect <i class="mdi mdi-map-marker-circle" aria-hidden="true"></i></a></li></ul></div></td><td class="text-center align-middle width-5"><div class="is-hidden-mobile dropdown"><button class="btn btn-setting form-control" data-toggle="dropdown"><i aria-hidden="true" class="mdi mdi-settings"></i> <i aria-hidden="true" class="mdi mdi-chevron-down"></i></button><ul class="dropdown-menu"><li class="text-center"><a onclick="editGroup('+idGroup+')" href="javascript:void(0)">Edit Group <i class="mdi mdi-table-edit" aria-hidden="true"></i></a></li><li class="text-center"><a onclick="deleteGroup('+idGroup+')" href="javascript:void(0)">Delete Group <i class="mdi mdi-delete-empty" aria-hidden="true"></i></a></li></ul></div><div class="is-hidden-tablet dropdown"><button class="btn-min btn-setting width-100" data-toggle="dropdown"><i aria-hidden="true" class="mdi mdi-settings"></i> <i aria-hidden="true" class="mdi mdi-chevron-down"></i></button><ul class="dropdown-menu"><li class="text-center"><a onclick="editGroup('+idGroup+')" href="javascript:void(0)">Edit Group <i class="mdi mdi-table-edit" aria-hidden="true"></i></a></li><li class="text-center"><a onclick="deleteGroup('+idGroup+')" href="javascript:void(0)">Delete Group <i class="mdi mdi-delete-empty" aria-hidden="true"></i></a></li></ul></div></td></tr>';
+        var htmlTR='<tr id="tr-'+idGroup+'" class="width-100"><td class="is-hidden-mobile text-center align-middle width-20"><span id="count-user-mobile-'+idGroup+'" style="font-size:0.5em;">-</span></td><td class="text-center align-middle width-5"><span id="count-user-tablet-'+idGroup+'" class="is-hidden-mobile">0</span><span id="count-user-mobile-'+idGroup+'" class="is-hidden-tablet" style="font-size:0.5em;">0</span></td><td class="text-center align-middle"><span id="name-group-tablet-'+idGroup+'" class="is-hidden-mobile">'+nameGroup+'</span><span id="name-group-mobile-'+idGroup+'" class="is-hidden-tablet" style="font-size:0.5em;">'+nameGroup+'</span></td><td class="text-center align-middle width-5"><a onclick="infoGroup('+idGroup+')" href="javascript:void(0)"><button class="is-hidden-tablet text-center btn-min btn-info-mobile"><i class="mdi mdi-information-outline" aria-hidden="true"></i></button><button class="is-hidden-mobile btn btn-info form-control"><i class="mdi mdi-information-outline" aria-hidden="true"></i></button></a></td><td class="text-center align-middle width-10"><div class="is-hidden-mobile dropdown"><button class="btn btn-manage form-control" data-toggle="dropdown">Manage<i aria-hidden="true" class="mdi mdi-chevron-down"></i></button><ul class="dropdown-menu"><li class="text-center"><a href="{{ asset("/manage-group/")}}'+'/'+idGroup+'/manage-person">Manage Person <i class="mdi mdi-account-multiple" aria-hidden="true"></i></a></li><li class="text-center"><a href="{{ asset("/manage-group/")}}'+'/'+idGroup+'/manage-floor">Manage Floor <i class="mdi mdi-map" aria-hidden="true"></i></a></li><li class="text-center"><a href="{{ asset("/manage-group/")}}'+'/'+idGroup+'/manage-status-defect">Manage Status Defect <i class="mdi mdi-map-marker-circle" aria-hidden="true"></i></a></li></ul></div><div class="is-hidden-tablet dropdown"><button class="btn-min btn-manage width-100" data-toggle="dropdown">Manage<i aria-hidden="true" class="mdi mdi-chevron-down"></i></button><ul class="dropdown-menu"><li class="text-center"><a href="{{ asset("/manage-group/")}}'+'/'+idGroup+'/manage-person">Manage Person <i class="mdi mdi-account-multiple" aria-hidden="true"></i></a></li><li class="text-center"><a href="{{ asset("/manage-group/")}}'+'/'+idGroup+'/manage-floor">Manage Floor <i class="mdi mdi-map" aria-hidden="true"></i></a></li><li class="text-center"><a href="{{ asset("/manage-group/")}}'+'/'+idGroup+'/manage-status-defect">Manage Status Defect <i class="mdi mdi-map-marker-circle" aria-hidden="true"></i></a></li></ul></div></td><td class="text-center align-middle width-5"><div class="is-hidden-mobile dropdown"><button class="btn btn-setting form-control" data-toggle="dropdown"><i aria-hidden="true" class="mdi mdi-settings"></i> <i aria-hidden="true" class="mdi mdi-chevron-down"></i></button><ul class="dropdown-menu"><li class="text-center"><a onclick="editGroup('+idGroup+')" href="javascript:void(0)">แก้ไขโครงการ <i class="mdi mdi-table-edit" aria-hidden="true"></i></a></li><li class="text-center"><a onclick="deleteGroup('+idGroup+')" href="javascript:void(0)">ลบโครงการ <i class="mdi mdi-delete-empty" aria-hidden="true"></i></a></li></ul></div><div class="is-hidden-tablet dropdown"><button class="btn-min btn-setting width-100" data-toggle="dropdown"><i aria-hidden="true" class="mdi mdi-settings"></i> <i aria-hidden="true" class="mdi mdi-chevron-down"></i></button><ul class="dropdown-menu"><li class="text-center"><a onclick="editGroup('+idGroup+')" href="javascript:void(0)">แก้ไขโครงการ <i class="mdi mdi-table-edit" aria-hidden="true"></i></a></li><li class="text-center"><a onclick="deleteGroup('+idGroup+')" href="javascript:void(0)">ลบโครงการ <i class="mdi mdi-delete-empty" aria-hidden="true"></i></a></li></ul></div></td></tr>';
             $('#tableGroup tbody tr:first').before(htmlTR);
     }
     function editGroup(idGroup){
         swal({
-        title: 'Edit Group',
-        html: '<form id="editGroupForm" enctype="multipart/form-data" action="{{ asset("/manage-group/update")}}'+'/'+idGroup+'" method="post"><input type="hidden" name="groupID" value="'+idGroup+'"><div class="col-xs-12"><div class="col-xs-3"><h5><b>Group Name:</b></h5></div><div class="col-xs-7"><input id="edit-groupName" name="editGroupName" type="text" class="form-control" value="'+this.getGroup(idGroup,1)+'" disabled></div><div class="col-xs-2 text-center align-middle"><a onclick="setDisable('+"'groupName'"+','+idGroup+',1)"><i id="switch-groupName" class="mdi mdi-toggle-switch-off" aria-hidden="true" style="font-size:30px;"></i></a></div></div><br><div class="col-xs-12"><div class="col-xs-3"><h5><b>remark:</b></h5></div><div class="col-xs-7"><textarea id="edit-remark" name="editRemark" type="text" class="form-control" disabled>'+this.getGroup(idGroup,2)+'</textarea></div><div class="col-xs-2 text-center align-middle"><a onclick="setDisable('+"'remark'"+','+idGroup+',2)"><i id="switch-remark" class="mdi mdi-toggle-switch-off" aria-hidden="true" style="font-size:30px;"></i></a></div></div><input type="hidden" name="_token" value="{{ csrf_token() }}"></form>',
+        title: 'แก้ไขโครงการ',
+        html: '<form id="editGroupForm" enctype="multipart/form-data" action="{{ asset("/manage-group/update")}}'+'/'+idGroup+'" method="post"><input type="hidden" name="groupID" value="'+idGroup+'"><div class="col-xs-12"><div class="col-xs-3"><h5><b>ชื่อโครงการ:</b></h5></div><div class="col-xs-7"><input id="edit-groupName" name="editGroupName" type="text" class="form-control" value="'+this.getGroup(idGroup,1)+'" disabled></div><div class="col-xs-2 text-center align-middle"><a onclick="setDisable('+"'groupName'"+','+idGroup+',1)"><i id="switch-groupName" class="mdi mdi-toggle-switch-off" aria-hidden="true" style="font-size:30px;"></i></a></div></div><br><div class="col-xs-12"><div class="col-xs-3"><h5><b>รายละเอียด:</b></h5></div><div class="col-xs-7"><textarea id="edit-remark" name="editRemark" type="text" class="form-control" disabled>'+this.getGroup(idGroup,2)+'</textarea></div><div class="col-xs-2 text-center align-middle"><a onclick="setDisable('+"'remark'"+','+idGroup+',2)"><i id="switch-remark" class="mdi mdi-toggle-switch-off" aria-hidden="true" style="font-size:30px;"></i></a></div></div><input type="hidden" name="_token" value="{{ csrf_token() }}"></form>',
         showCloseButton: true,
         showCancelButton: true,
         confirmButtonColor: '#3286b7',
@@ -324,9 +324,9 @@
                 success:function(data){
                     if(data.countGroup==0){
                         swal({
-                            title:'Update Group!',
+                            title:'อัพเดทโครงการ!',
                             type:'error',
-                            html:'Not Find Group in Server!!<br>Refresh Web <i class="mdi mdi-wifi-off" aria-hidden="true"></i>',
+                            html:'ไม่พบข้อมูลโครงการ!!<br>Refresh Web <i class="mdi mdi-wifi-off" aria-hidden="true"></i>',
                             showCloseButton: true,
                             confirmButtonColor: '#bcb8b9',
                             confirmButtonText: 'Close'
@@ -334,23 +334,23 @@
                     }else if(data.statusName!=true||data.statusRemark==false){
                         var textWarning='';
                         if(data.statusName==false){
-                            textWarning=textWarning+'name of group "'+data.valueName+'" interdiction is special character!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
+                            textWarning=textWarning+'โครงการ "'+data.valueName+'" interdiction is special character!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
                         }else if(data.statusName==null){
-                            textWarning=textWarning+'name of group not null!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
+                            textWarning=textWarning+'ชื่อของโครงการห้ามว่าง!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
                         }else{
-                            textWarning=textWarning+'Update name:"'+data.valueName+'" success!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
+                            textWarning=textWarning+'อัพเดทโครงการ :"'+data.valueName+'" success!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
                             setDataGroup(data.idGroup,1,data.valueName);
                             setTRGroup(data.idGroup,'name-group-tablet-'+data.idGroup,1);
                             setTRGroup(data.idGroup,'name-group-mobile-'+data.idGroup,1);
                         }
                         if(data.statusRemark==false){
-                            textWarning=textWarning+'remark of group "'+data.valueRemark+'" interdiction is special character!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
+                            textWarning=textWarning+'รายละเอียดโครงการ: "'+data.valueRemark+'" ห้ามีตัวอักษรพิเศษ!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
                         }else{
-                            textWarning=textWarning+'Update remark:"'+data.valueRemark+'" success!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
+                            textWarning=textWarning+'อัพเดทรายละเอียด:"'+data.valueRemark+'" เรียบร้อบ!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
                             setDataGroup(data.idGroup,2,data.valueRemark);
                         }
                         swal({
-                            title:'Update Group!',
+                            title:'อัพเดทโครงการ!',
                             type:'warning',
                             html:textWarning,
                             showCloseButton: true,
@@ -367,7 +367,7 @@
                             setDataGroup(data.idGroup,2,"");
                         }
                         swal({
-                            title:'Update Group!',
+                            title:'อัพเดทโครงการ!',
                             type:'success',
                             html:'<b>Group Name:</b> '+data.valueName+textRemark,
                             showCloseButton: true,
@@ -379,9 +379,9 @@
                     }
                 },error: function(data){
                     swal({
-                        title:'Update Group!',
+                        title:'อัพเดทโครงการ!',
                         type:'error',
-                        html:'Can Not Update Group in Server!!<br>Check connect internet <i class="mdi mdi-wifi-off" aria-hidden="true"></i>',
+                        html:'ไม่สามารถอัพเดทโครงการได้<i class="mdi mdi-wifi-off" aria-hidden="true"></i>',
                         showCloseButton: true,
                         confirmButtonColor: '#bcb8b9',
                         confirmButtonText: 'Close'
@@ -403,16 +403,16 @@
     }
     function addGroup(){
         swal({
-        title: 'Add Group',
-        html: '<form id="addGroupForm" enctype="multipart/form-data" action="{{ asset("/manage-group/create")}}" method="post" style="margin-top:-1.5rem;"><div class="col-xs-12 mt-2"><div class="col-xs-3"><h6><b>Name Group:</b></h6></div><div class="col-xs-9"><input id="create-name-group" name="createNameGroup" type="text" class="form-control"></div></div><br><div class="col-xs-12 mt-2"><div class="col-xs-3"><h6><b>Remark:</b></h6></div><div class="col-xs-9"><textarea id="create-remark-group" name="createRemarkGroup" class="form-control"></textarea></div></div><input type="hidden" name="_token" value="{{ csrf_token() }}"></form>',
+        title: 'เพิ่มโครงการ',
+        html: '<form id="addGroupForm" enctype="multipart/form-data" action="{{ asset("/manage-group/create")}}" method="post" style="margin-top:-1.5rem;"><div class="col-xs-12 mt-2"><div class="col-xs-3"><h6><b>โครงการชื่อ:</b></h6></div><div class="col-xs-9"><input id="create-name-group" name="createNameGroup" type="text" class="form-control"></div></div><br><div class="col-xs-12 mt-2"><div class="col-xs-3"><h6><b>รายละเอียด:</b></h6></div><div class="col-xs-9"><textarea id="create-remark-group" name="createRemarkGroup" class="form-control"></textarea></div></div><input type="hidden" name="_token" value="{{ csrf_token() }}"></form>',
         showCloseButton: true,
         showCancelButton: true,
         confirmButtonColor: '#3286b7',
         cancelButtonColor: '#cf5e51',
         confirmButtonText:
-            'Save! <i class="mdi mdi-content-save" aria-hidden="true"></i>',
+            'บันทึก! <i class="mdi mdi-content-save" aria-hidden="true"></i>',
         cancelButtonText:
-            'Cancel <i class="mdi mdi-close" aria-hidden="true"></i>'
+            'ยกเลิก <i class="mdi mdi-close" aria-hidden="true"></i>'
         }).then(function(){
             var form = $('#addGroupForm')[0];
             var formData = new FormData(form);
@@ -427,20 +427,20 @@
                     if(data.statusName!=true||data.statusRemark==false){
                         var textError='';
                         if(data.statusName==false){
-                            textError=textError+'name of group "'+data.valueName+'" interdiction is special character!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
+                            textError=textError+'ชื่อโครงการ "'+data.valueName+'" ห้ามใส่ตัวอักษรพิเศษ <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
                         }else if(data.statusName==null){
-                            textError=textError+'name of group not null!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
+                            textError=textError+'ชื่อของโครงการห้ามว่าง!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
                         }
                         if(data.statusRemark==false){
-                            textError=textError+'remark of group "'+data.valueRemark+'" interdiction is special character!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
+                            textError=textError+'รายละเอียดโครงการ "'+data.valueRemark+'" ห้ามใส่ตัวอักษรพิเศษ!! <i class="mdi mdi-close-octagon-outline" aria-hidden="true"></i><br>';
                         }
                         swal({
-                            title:'Error Create Group!',
+                            title:'เกิดข้อผิดพลาดในการสร้างโครงการ!',
                             type:'error',
                             html:textError,
                             showCloseButton: true,
                             confirmButtonColor: '#bcb8b9',
-                            confirmButtonText: 'Close'
+                            confirmButtonText: 'ยกเลิก'
                         }).then(function(){},function(dismiss){});
                     }else{
                         var textRemark='';
@@ -448,15 +448,15 @@
                         setDataGroup(data.idGroup,1,data.valueName);
                         if(data.valueRemark){
                             setDataGroup(data.idGroup,2,data.valueRemark);
-                            textRemark='<br><h5><b>Remark: </b>: '+data.valueRemark+'</h5>'
+                            textRemark='<br><h5><b>รายละเอียดโครงการ: </b>: '+data.valueRemark+'</h5>'
                         }else{
                             setDataGroup(data.idGroup,2,"");
                         }
                         createTR(data.idGroup);
                         swal({
-                            title:'Create Group!',
+                            title:'สร้างโครงการสำเร็จ!',
                             type:'success',
-                            html:'<b>Group Name:</b> '+data.valueName+textRemark,
+                            html:'<b>ชื่อโครงการ:</b> '+data.valueName+textRemark,
                             showCloseButton: true,
                             confirmButtonColor: '#bcb8b9',
                             confirmButtonText: 'Close'
@@ -479,20 +479,20 @@
         var remark=this.getGroup(groupID,2);
         var textRemark='';
         if(remark){
-            textRemark='<h5><b>remark: </b>'+remark+' </h5>';
+            textRemark='<h5><b>รายละเอียด: </b>'+remark+' </h5>';
         }
         swal({
-        title: 'Delete Group',
+        title: 'ลบโครงการ',
         type: 'warning',
-        html: '<b>Group Name:</b> '+this.getGroup(groupID,1)+' '+textRemark,
+        html: '<b>โครงการชื่อ:</b> '+this.getGroup(groupID,1)+' '+textRemark,
         showCloseButton: true,
         showCancelButton: true,
         confirmButtonColor: '#c94a3b',
         cancelButtonColor: '#999999',
         confirmButtonText:
-            'Confirm! <i class="mdi mdi-delete" aria-hidden="true"></i>',
+            'ยืนยัน! <i class="mdi mdi-delete" aria-hidden="true"></i>',
         cancelButtonText:
-            'Cancel <i class="mdi mdi-close" aria-hidden="true"></i>'
+            'ยกเลิก <i class="mdi mdi-close" aria-hidden="true"></i>'
         }).then(function(){
             var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
             $.ajax({
@@ -511,9 +511,9 @@
                         countGroup =  parseInt(countGroup)-1;
                         $('#count-tablet').text(countGroup);
                         swal({
-                            title:'Delete Group!',
+                            title:'ลบโครงการเรียบร้อย!',
                             type:'success',
-                            html:'<b>Group Name:</b> '+getGroup(data.valueID,1)+' '+textRemark,
+                            html:'<b>โครงการชื่อ:</b> '+getGroup(data.valueID,1)+' '+textRemark,
                             showCloseButton: true,
                             confirmButtonColor: '#bcb8b9',
                             confirmButtonText: 'Close'
@@ -525,9 +525,9 @@
                         setDataGroup(data.valueID,4,null);
                     }else{
                         swal({
-                            title:'Delete Group!',
+                            title:'เกิดข้อผิดพลาดในการลบโครงการ!',
                             type:'error',
-                            html:'Can Not Delete Group in Server!!<br>Please refresh to page <i class="mdi mdi-refresh" aria-hidden="true"></i>',
+                            html:'กรุณาตรวจสอบเครื่อข่าย<i class="mdi mdi-refresh" aria-hidden="true"></i>',
                             showCloseButton: true,
                             confirmButtonColor: '#bcb8b9',
                             confirmButtonText: 'Close'
@@ -535,9 +535,9 @@
                     }
                 },error:function(data){
                     swal({
-                        title:'Delete Group!',
+                        title:'ลบโครงการ!',
                         type:'error',
-                        html:'Can Not Delete Group in Server!!<br>Check connect internet <i class="mdi mdi-wifi-off" aria-hidden="true"></i>',
+                        html:'ไม่พบข้อมูลโครงการในระบบ!! <i class="mdi mdi-wifi-off" aria-hidden="true"></i>',
                         showCloseButton: true,
                         confirmButtonColor: '#bcb8b9',
                         confirmButtonText: 'Close'
