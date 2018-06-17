@@ -60,11 +60,6 @@
                                         <a href="{{ asset('/login/auth/facebook') }}"><button class="btn btn-primary form-control" type="button"><i class="mdi mdi-facebook" aria-hidden="true"></i> Facebook</button></a>
                                     </div>
                                 </div>
-                                <div class="col-md-12 text-center">
-                                    <a class="btn btn-link text-center" href="{{ route('password.request') }}">
-                                        Forgot Your Password?
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     </form>
